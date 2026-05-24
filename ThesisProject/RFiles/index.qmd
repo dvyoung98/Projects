@@ -1,0 +1,6 @@
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+# Abstract
+
+Since the seminal work of Lee (1999), scholars have debated the extent to which the federal minimum wage drives lower-tail wage inequality in the United States. This paper extends the analysis of Autor, Manning, and Smith (2016), which serves as a reassessment of Lee's findings using data through 2012, by incorporating an additional twelve years of CPS Merged Outgoing Rotation Group data through 2024. This period is of particular interest because the real value of the average minimum wage has increased substantially since 2012, providing new identifying variation. Replicating the instrument variables strategy of Autor, Manning, and Smith (2016), I find that the minimum wage's contribution to lower-tail inequality is modestly smaller than even the revised estimates of that study, consistent with the hypothesis that broad state-level minimum wage increases have compressed the lower-tail of the wage distribution while leaving upper-tail inequality largely unaffected.

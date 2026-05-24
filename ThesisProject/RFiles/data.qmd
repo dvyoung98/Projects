@@ -1,0 +1,7 @@
+## Data
+
+The study being extended provides and uses data from 1973-2012. The data comes from CPS monthly outgoing rotation group (morg) data, which is provided by the UNICON corporation. For this extension, further data from the same source will be compiled and cleaned to present an additional 10 years worth of findings. @autor2016minimum determine an extension that could give more conclusive answers would require better wage data. The cleaner that is used in this study, as well as @autor2016minimum, comes from earlier projects from similar authors: @autor2008.
+
+In 2019, the National Bureau of Economic Research began compiling the CPS morg data into easy to access .dta files, from 1979 to 2024. The last update to this series of data was 05/20/2025 for the 2024 data set. As @autor2016minimum provides this data up until 2012, the remaining data up until the present will come from this source (@NBER_MORG). Data for CPI is annual CPI sourced from the Bureau of Labor Statistics (@BLSData2026). This data, like the CPI data given by the original authors are based at 1982-84=100. As for state minimum wage data, data set gathered comes from the Department of Labor (@USDOLMinimumWageHistory). All data being added covers the years 2012 to 2024.
+
+The data will be formatted to show figures and tables for males, females, and pooled males and females.

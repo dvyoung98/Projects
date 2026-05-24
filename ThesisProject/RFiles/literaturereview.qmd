@@ -1,0 +1,11 @@
+## Literature Review
+
+This paper sits within a literature examining the relationship between the minimum wage and lower-tail wage inequality in the United States.
+
+The initial study (@lee1999wage) poses that essentially all income inequality (roughly 80%), especially at the lower tail, can be primarily explained by decreases in the real minimum wage. For clarity, the real minimum wage can be explained as the real value of the minimum wage. Over time, if there are no increases to the value of the minimum wage, inflation will effectively make the minimum wage less effective. This varies primarily across gender lines, where for women it explains much more inequality than it does in men.
+
+The subsequent study, which is the one being extended (@autor2016minimum), finds that much less, around 30% of lower tail income inequality can be explained by the minimum wage. This paper hypothesizes that the minimum wage's contribution to lower-tail inequality will be smaller still once data through 2024 are incorporated.
+
+A crucial dimension of both @lee1999wage and @autor2016minimum is the role of gender in driving these distributional effects. Due to there being a higher density of female workers historically clustered near the income floor, the minimum wage "bite" is significantly larger for women than men. Consequently, both studies find that changes in the real value of the minimum wage have a much more pronounced impact on female wage inequality. While @lee1999wage attributed nearly the entirety of the rise in female lower-tail inequality during the 1980s to the erosion of the minimum wage, @autor2016minimum show that after correcting for measurement error, the policy explains a more modest 30% to 40% of the growth in the female 50/10 wage gap, and has a negligible effect on male workers.
+
+The Figures and Tables portion of this study will show some of the remaining images that are not discussed in depth here. The authors use these figures in the initial work to express causes and reasons to conduct their study in the way that they do. As I am merely extending their work, I feel that I do not need to reiterate their motivations. I do, however, extend their figures with the new data gathered.

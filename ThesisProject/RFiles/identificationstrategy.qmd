@@ -1,0 +1,51 @@
+## Identification Strategy
+
+@lee1999wage presents the following OLS model, which is also used in @autor2016minimum:
+
+$$
+w_{st}(p)-w_{st}(50)=\beta_1(p)[w^m_{st}-w_{st}(50)]+\beta_2(p)[w^m_{st}-w_{st}(50)]^2
+$$ {#eq-numberone} $$
++\sigma_{s0}(p)+\sigma_{s1}(p)*time_t+\gamma^\sigma_t(p)+\epsilon^\sigma_{st}(p)
+$$  
+
+For this equation, $w_{st}(p)$ represents the log real wage, $\sigma_{s0}(p)$ time-invariant state effects, $\sigma_{s1}(p)$ state-specific trends, $\gamma^\sigma_t(p)$ time effects, and $\epsilon^\sigma_{st}(p)$ transitory effects; at percentile $p$ in state $s$ at time $t$. From @lee1999wage, the bindingness of the minimum wage is defined to be the log difference between the minimum wage and the median. By bindingness of the minimum wage, they mean the minimum wages proximity to the median wage. This will result in a less negative value, or a greater effective minimum wage. This is also referred to as a "bite". The model is identified using three distinct scenarios characterizing how the wage distribution responds to a change in the minimum wage.
+
+Scenario 1: no spillovers, no disemployment. This means that when there is a change in the minimum wage, those that were making the minimum wage before the change will have their wages bumped up and there will be no other changes. There is no change in employment and no change in the wages of other around the minimum wage.
+
+Scenario 2: spillovers, no disemployment. This means that when there is a change in the minimum wage, those that were making the minimum wage before the change will have their wages bumped up. Those who were in supervisory or other hierarchical roles above those earning minimum wage would have their wage bumped up to some value that would maintain the hierarchy. For example, if the minimum wage were \$7.25 and a worker earning that wage had a supervisor making \$15 an hour; a change in the minimum wage to \$15 would cause the minimum wage worker and their supervisor to see a bump in pay so as to maintain the hierarchy of the working conditions.
+
+Scenario 3: no spillovers, full disemployment. This means that when there is a change in the minimum wage, those that were making the minimum wage before the change will become unemployed or replaced with automation, etc. Those who were in supervisory roles would not see increases in their pay.
+
+A combination of Scenario 2 and 3 is used, but due to measurement error, there are inaccurate estimations dragging variables together. This is overcome via an instrument variable explained later (methodology deriving from @durbin1954errors). In survey data, individuals frequently misreport or round their earnings. This introduces random noise into the observed wage distribution. As there are benchmarks for every percentile against the observed median wage in the OLS model, any sampling error in the median affects both the dependent variable and the independent variable simultaneously.
+
+@autor2016minimum model this measurement error with the following equations:
+
+$$
+w(p^*) \equiv max[w^m,w^*(p)],
+$$ {#eq-numbertwo}
+
+$$
+w_i=w(p*)+\epsilon_i
+$$ {#eq-numberthree}
+
+ 
+
+When the median is over-measured in a given state-year cell ($\epsilon_{st}>0$), the dependent variable ($w^p_{st}-w_{st}(50)$) artificially decreases. At the same time, the independent variable \[$w^m_{st}-e_{st}(50)$\] also decreases, becoming more negative. Conversely, when the median is under represented or measured ($\epsilon_{st}<0$), both terms artificially increase. This common error term forces the two variables to move in tandem, generating a mechanical, upward biased positive correlation. The resulting bias mimics the statistical signature of a spillover effect. As a result, OLS models mistakenly interpret the measurement noise as a real economic ripple that pulls up the wages for high earning workers. By overstating the reach of the minimum wage, the OLS framework incorrectly attributes a reduction in inequality to the minimum wage when it is actually just the compression of measurement error.
+
+Once this measurement error is purged through the instrument variable, the percieved spillovers at higher percentiles disappear. Thus implying that the true range of the minimum wage is much more modest, extending only to the bottom percentiles of the distribution.
+
+@autor2016minimum expresses possible cause of bias in the estimates with the following equation:
+
+$$
+w_{st}(50)=\mu_{s0}+\mu_{s1}*time_t+\gamma^\mu_t+\epsilon^\mu_{st}
+$$ {#eq-numberfour}
+
+ 
+
+For this equation, $w_{st}(50)$ retains its interpretation from the previous equation. That is, it represents the median wage (wage at the $p^{th}$ percentile, so the 50th percentile) for a given state at a given time. Furthermore, $\mu_{s0}$ represents the state effect, $\mu_{s1}$ the state trend, $\gamma^\mu_t$ the common year effect, and $\epsilon^\mu_{st}$ the transitory effect.
+
+The authors then go on to take an instrument variables (IV) approach for the model. To do this, they instrument the minimum wage; For 2SLS, the effective minimum ($[w_{st}^m-w_{st}(50)]$) and its square ($[w^m_{st}-w_{st}(50)]^2$) are instrumented by the log of the minimum wage, the square of the log of the minimum wage, and the logged minimum wage interacted with the average real log median wage ($lmin*avg\_median$). These data points are anchored with annual CPI.
+
+To replicate previous work, all that needed to be done was to lightly edit data provided by the authors. To extend the work, new data and information is gathered and all that needs to be done is to simply extend with the new data and additional years. The CPS morg data provided by the NBER resembles the raw data that was cleaned by @autor2016minimum. In order to have the data appropriately reflect the format, a cleaner is used. This cleaner is similar to one used in @autor2008, and it is the basis for the initial study. The authors clean the raw data and work with the output. The data for CPI and state minimum wages require no cleaning; as mentioned above, CPI is already formatted the same between the new and old data. The state minimum wage data is not very debatable, and thereby requires no reworking.
+
+One replication issue warrants disclosure. In the truespike portion of the analysis, the maximum internal matrix dimension (which governs the number of variables that can be included) required lowering from a matsize of 1000 to 800. All output ran successfully under this constraint, and I do not believe it affected the results, but the deviation from the original specification is noted here for transparency.

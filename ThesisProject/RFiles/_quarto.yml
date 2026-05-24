@@ -1,0 +1,77 @@
+project:
+  type: book
+
+book:
+  title: "A Continuation of Reassessment:"
+  subtitle: "Minimum Wage's Impact on Income Inequality"
+  author: "Donald Young"
+  date: "2026"
+
+  chapters:
+    - index.qmd
+    - introduction.qmd
+    - literaturereview.qmd
+    - data.qmd
+    - identificationstrategy.qmd
+    - results.qmd
+    - conclusion.qmd
+    - figuresandtables.qmd
+    - References.qmd
+
+bibliography: citations.bib
+
+format:
+  pdf:
+    documentclass: book
+    classoption: [oneside]
+    fontsize: 12pt
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1.5in
+      - right=1in
+    linestretch: 2
+    toc: true
+    toc-depth: 3
+    toc-title: "Table of Contents"
+    lof: true
+    lot: true
+    number-sections: true
+    colorlinks: true
+    keep-tex: false
+    template-partials:
+      - partials/before-body.tex
+    include-in-header:
+      text: |
+        \usepackage{longtable}
+        \usepackage{lscape}
+        \usepackage{booktabs}
+        \usepackage{caption}
+        \usepackage{setspace}
+        \usepackage{titlesec}
+        \usepackage{fancyhdr}
+        \usepackage{etoolbox}
+
+        % ── Chapter heading style (matches CPP thesis) ──────────────────────
+        \titleformat{\chapter}[display]
+          {\normalfont\large\bfseries\centering}
+          {\chaptertitlename\ \thechapter}{10pt}{\large}
+        \titlespacing*{\chapter}{0pt}{-20pt}{30pt}
+
+        % ── Section/subsection style ─────────────────────────────────────────
+        \titleformat{\section}{\normalfont\normalsize\bfseries}{\thesection}{1em}{}
+        \titleformat{\subsection}{\normalfont\normalsize\itshape}{\thesubsection}{1em}{}
+
+        % ── Remove blank page before chapter ─────────────────────────────────
+        \patchcmd{\chapter}{\cleardoublepage}{\clearpage}{}{}
+
+        % ── Page numbering: roman for front matter, arabic for body ──────────
+        \pagenumbering{roman}
+        \setcounter{page}{1}
+
+        % ── Header/footer ─────────────────────────────────────────────────────
+        \pagestyle{plain}
+
+        % ── List of figures / tables caption ─────────────────────────────────
+        \renewcommand{\listfigurename}{List of Figures}
+        \renewcommand{\listtablename}{List of Tables}
