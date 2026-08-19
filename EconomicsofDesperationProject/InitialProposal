@@ -1,4 +1,6 @@
 Desperation is not a standard economic construct like risk aversion or time preference
+  In fact, desperation should probably not be considered a preferential parameter like the ones mentioned above. Should be treated as a state variable.
+  If treated as a state variable, analysis would be different from initial thoughts; modeling will not be as similar to risk aversion analysis
 Most existing literature ties in to criminal behavior when discussing desperation
 
 Initial concept and interest for project comes from idea of political game:
